@@ -23,6 +23,37 @@
     <script async="" src="js/script.js" data-website-id="9f2e5513-0f85-4116-b81e-15256ece0ebe"></script>
     
     <style>
+	 .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%); /* 使按钮水平居中 */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            animation: breathing 1.5s infinite; /* 添加动画 */
+            white-space: nowrap; /* 确保文字不换行 */
+        }
+
+        .floating-button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes breathing {
+            0%, 100% {
+                transform: translateX(-50%) scale(1); /* 初始大小 */
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05); /* 放大效果 */
+            }
+        }
+		
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #f8fafc;
@@ -277,7 +308,9 @@
             </div>
         </div>
     </div>
-
+ <button class="floating-button" onclick="aat()">
+         コミュニティ情報を見る
+    </button>
     <!-- Bootstrap JS -->
     <script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/bootstrap.bundle.min.js"></script>
 
